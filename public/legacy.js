@@ -335,7 +335,7 @@ let SBO=false,NAVO=null;try{SBO=localStorage.getItem('iipsSB')==='1';NAVO=localS
 (function buildSB(){const pn=$('panel'),kids=[...pn.children].slice(1),G={};let cur='presets';
  kids.forEach(k=>{if(k.classList.contains('qp'))cur='presets';else if(k.tagName==='H3'){const m=NMAP.find(x=>x[0].test(k.textContent.trim()));if(m)cur=m[1]}(G[cur]=G[cur]||[]).push(k)});
  pn.innerHTML='';const inn=document.createElement('div');inn.className='nvin';
- inn.innerHTML=`<div id="nvtop"><button id="hbg" title="Menu" aria-label="Toggle sidebar" aria-expanded="false">${svg('menu')}</button><span class="tt">&#127891; IIPS Poster Studio</span></div>`;
+ inn.innerHTML=`<div id="nvtop"><button id="hbg" title="Menu" aria-label="Toggle sidebar" aria-expanded="false">${svg('menu')}</button><span class="tt">&#127891; PlaceBoard </span></div>`;
  NAV.forEach(([id,l,ic])=>{const s=document.createElement('section');s.className='nv';s.id='nv-'+id;s.innerHTML=`<button class="nh" title="${l}" aria-expanded="false">${svg(ic)}<span class="nl">${l}</span><span class="nc">${svg('chev')}</span></button><div class="nb"></div>`;
   const b=s.querySelector('.nb');(G[id]||[]).forEach(e=>b.appendChild(e));s.querySelector('.nh').onclick=()=>navClick(id);inn.appendChild(s)});
  const th=document.createElement('section');th.className='nv';th.innerHTML='<button class="nh" id="thm" onclick="toggleTheme()"></button>';inn.appendChild(th);pn.appendChild(inn);
